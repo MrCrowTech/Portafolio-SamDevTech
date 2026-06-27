@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio | SamDev</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.css" integrity="sha512-kJlvECunwXftkPwyvHbclArO8wszgBGisiLeuDFwNM8ws+wKIw0sv1os3ClWZOcrEB2eRXULYUsm8OVRGJKwGA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cascadia+Code:ital,wght@0,200..700;1,200..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+    </style>
+</head>
+<body>
+
+    <!-- navbar -->
+    <nav class="navbar" id="navbar">
+        <div class="navbar__logo">
+            <a href="index.html">Sam<span>Dev</span>.</a>
+        </div>
+        <div class="navbar__links">
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+        <button class="navbar__burger" id="burger">
+            <i class="ri-menu-line" id="burgerIcon"></i>
+        </button>
+    </nav>
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+    </div>
+
+    <!-- Hero -->
+    <section class="hero" id="home">
+
+        <div class="hero__left">
+            <div class="hero__text">
+                <p class="hero__available"><i class="ri-circle-fill"></i> Available for work</p>
+                <h1>Hi, I'm <span>&lt;Sami&gt;</span>.<br><em>I build things for the web</em></h1>
+                <p class="hero__subtitle">Front-End Developer focused on crafting clean, fast, and<br>accessible user interfaces.</p>
+            </div>
+            <div class="hero__buttons">
+                <button class="hero__btn-primary">View My Work</button>
+                <button class="hero__btn-outline">Get in touch</button>
+            </div>
+            <div class="hero__socials">
+                <i class="ri-github-fill"></i>
+                <i class="ri-linkedin-box-fill"></i>
+                <i class="ri-twitter-x-fill"></i>
+            </div>
+            <div class="hero__disclaimer">
+                <p class="hero__alert">Still no links yet. Very soon...</p>
+            </div>
+        </div>
+
+        <div class="hero__right">
+            <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=500&q=80" alt="code" class="hero__image">
+        </div>
+
+    </section>
+
+    <!-- about-->
+    <section class="about" id="about" style="scroll-margin-top: 55px;">
+        <div class="about__container">
+            <h2 class="about__title">
+                <span class="section-number">01 /</span>About me
+            </h2>
+            <div class="about__grid">
+
+                <div class="about__text">
+                    <p>I'm a self-taught Front-End Developer passionate about building digital products that are both visually sharp and technically solid. I love turning complex problems into simple, beautiful solutions.</p>
+                    <p>When I'm not coding, you'll find me exploring design systems, contributing to open-source projects, or learning something new. I believe in writing clean code and building things that last.</p>
+                    <button class="about__cv-btn"><i class="ri-download-2-line"></i>Download CV</button>
+                    <span class="about__cv-alert">Still no CV yet. Coming soon aswell</span>
+                </div>
+
+                <div class="about__stats">
+                    <div class="about__stat-card">
+                        <span class="about__stat-number">1+</span>
+                        <span class="about__stat-label">Year of experience</span>
+                    </div>
+                    <div class="about__stat-card">
+                        <span class="about__stat-number">20+</span>
+                        <span class="about__stat-label">Projects completed</span>
+                    </div>
+                    <div class="about__stat-card">
+                        <span class="about__stat-number">10+</span>
+                        <span class="about__stat-label">Happy clients</span>
+                    </div>
+                    <div class="about__stat-card">
+                        <span class="about__stat-number">∞</span>
+                        <span class="about__stat-label">Lines of code</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section class="skills" id="skills" style="scroll-margin-top: 55px";>
+        <div class="skills__container">
+            <h2 class="skills__title">
+                <span class="section-number">02 /</span>Skills & Tools
+            </h2>
+            <p class="skills__subtitle">Technologies I work with on a daily basis.</p>
+            <div class="skills__grid">
+
+                <div class="skills__card">
+                    <h4 class="skills__card-title"><i class="ri-code-line"></i>Languages</h4>
+                    <div class="skills__card-items">
+                        <span><i class="ri-html5-line"></i>HTML 5</span>
+                        <span><i class="ri-css3-line"></i>CSS 3</span>
+                        <span><i class="ri-javascript-line"></i>JavaScript (ES6+)</span>
+                        <span><i class="ri-database-2-line"></i>SQL (basic)</span>
+                    </div>
+                </div>
+
+                <div class="skills__card">
+                    <h4 class="skills__card-title"><i class="ri-stack-line"></i>Frameworks & Libraries</h4>
+                    <div class="skills__card-items">
+                        <span><i class="ri-bootstrap-line"></i>BootStrap</span>
+                        <span><i class="ri-tailwind-css-fill"></i>Tailwind CSS</span>
+                        <span><i class="ri-vuejs-line"></i>Vue.js</span>
+                        <span><i class="ri-reactjs-line"></i>React.js</span>
+                    </div>
+                </div>
+
+                <div class="skills__card">
+                    <h4 class="skills__card-title"><i class="ri-tools-fill"></i>Tools</h4>
+                    <div class="skills__card-items">
+                        <span><i class="ri-git-branch-line"></i>Git & GitHub</span>
+                        <span><i class="ri-code-s-slash-line"></i>VS Code</span>
+                        <span><i class="ri-pencil-line"></i>Figma</span>
+                    </div>
+                </div>
+
+                <div class="skills__card">
+                    <h4 class="skills__card-title"><i class="ri-bard-fill"></i>Soft Skills</h4>
+                    <div class="skills__card-items">
+                        <span><i class="ri-chat-3-fill"></i>Communication</span>
+                        <span><i class="ri-lightbulb-fill"></i>Problem Solving</span>
+                        <span><i class="ri-team-line"></i>Teamwork</span>
+                        <span><i class="ri-time-fill"></i>Time management</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ─── PROJECTS ─── -->
+    <section class="projects" id="projects"  style="scroll-margin-top: 55px";>
+        <div class="projects__container">
+            <h2 class="projects__title">
+                <span class="section-number">03 /</span>Projects
+            </h2>
+            <p class="projects__subtitle">A selection of things I've built.</p>
+            <div class="projects__grid">
+
+                <div class="projects__card">
+                    <div class="projects__card-header">
+                        <i class="ri-shopping-cart-line projects__card-icon"></i>
+                        <div class="projects__card-links">
+                            <a href="#" aria-label="GitHub"><i class="ri-github-line"></i></a>
+                            <a href="#" aria-label="Live demo"><i class="ri-external-link-line"></i></a>
+                        </div>
+                    </div>
+                    <h3 class="projects__card-title">ShopUI</h3>
+                    <p class="projects__card-desc">A responsive e-commerce product page with cart functionality, built with vanilla JS and CSS Grid.</p>
+                    <div class="projects__card-tags">
+                        <span>HTML</span>
+                        <span>CSS</span>
+                        <span>JavaScript</span>
+                    </div>
+                </div>
+
+                <div class="projects__card">
+                    <div class="projects__card-header">
+                        <i class="ri-sun-cloudy-line projects__card-icon"></i>
+                        <div class="projects__card-links">
+                            <a href="#" aria-label="GitHub"><i class="ri-github-line"></i></a>
+                            <a href="#" aria-label="Live demo"><i class="ri-external-link-line"></i></a>
+                        </div>
+                    </div>
+                    <h3 class="projects__card-title">WeatherNow</h3>
+                    <p class="projects__card-desc">Weather dashboard that consumes an open API and displays forecasts with a clean, minimal UI.</p>
+                    <div class="projects__card-tags">
+                        <span>React</span>
+                        <span>API</span>
+                        <span>Tailwind</span>
+                    </div>
+                </div>
+
+                <div class="projects__card">
+                    <div class="projects__card-header">
+                        <i class="ri-task-line projects__card-icon"></i>
+                        <div class="projects__card-links">
+                            <a href="#" aria-label="GitHub"><i class="ri-github-line"></i></a>
+                            <a href="#" aria-label="Live demo"><i class="ri-external-link-line"></i></a>
+                        </div>
+                    </div>
+                    <h3 class="projects__card-title">TaskFlow</h3>
+                    <p class="projects__card-desc">Kanban-style task manager with drag & drop, local storage persistence, and dark mode support.</p>
+                    <div class="projects__card-tags">
+                        <span>React</span>
+                        <span>LocalStorage</span>
+                        <span>CSS</span>
+                    </div>
+                </div>
+
+                <div class="projects__card">
+                    <div class="projects__card-header">
+                        <i class="ri-palette-line projects__card-icon"></i>
+                        <div class="projects__card-links">
+                            <a href="#" aria-label="GitHub"><i class="ri-github-line"></i></a>
+                            <a href="#" aria-label="Live demo"><i class="ri-external-link-line"></i></a>
+                        </div>
+                    </div>
+                    <h3 class="projects__card-title">PaletteGen</h3>
+                    <p class="projects__card-desc">Color palette generator with copy-to-clipboard, export to CSS variables, and accessibility contrast check.</p>
+                    <div class="projects__card-tags">
+                        <span>JavaScript</span>
+                        <span>CSS</span>
+                        <span>UX</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ─── CONTACT ─── -->
+    <section class="contact" id="contact"  style="scroll-margin-top: 55px";>
+        <div class="contact__container">
+            <h2 class="contact__title">
+                <span class="section-number">04 /</span>Get in touch
+            </h2>
+            <p class="contact__subtitle">Have a project in mind? Let's talk about it.</p>
+            <div class="contact__grid">
+
+                <div class="contact__info">
+                    <div class="contact__info-item">
+                        <i class="ri-mail-line"></i>
+                        <span>sam@samdev.io</span>
+                    </div>
+                    <div class="contact__info-item">
+                        <i class="ri-map-pin-line"></i>
+                        <span>Barcelona, Spain</span>
+                    </div>
+                    <div class="contact__info-item">
+                        <i class="ri-time-line"></i>
+                        <span>Mon – Fri, 9am – 6pm CET</span>
+                    </div>
+                    <div class="contact__info-socials">
+                        <a href="#" aria-label="GitHub"><i class="ri-github-line"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="ri-linkedin-box-line"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="ri-twitter-x-line"></i></a>
+                    </div>
+                </div>
+
+                <form class="contact__form" id="contactForm" novalidate>
+                    <div class="contact__form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" placeholder="Your name" autocomplete="off" />
+                        <span class="contact__form-error" id="nameError"></span>
+                    </div>
+                    <div class="contact__form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" placeholder="your@email.com" autocomplete="off" />
+                        <span class="contact__form-error" id="emailError"></span>
+                    </div>
+                    <div class="contact__form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" placeholder="What's this about?" autocomplete="off" />
+                        <span class="contact__form-error" id="subjectError"></span>
+                    </div>
+                    <div class="contact__form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" rows="5" placeholder="Tell me about your project..."></textarea>
+                        <span class="contact__form-error" id="messageError"></span>
+                    </div>
+                    <button type="submit" class="contact__form-btn">
+                        <i class="ri-send-plane-line"></i> Send message
+                    </button>
+                    <p class="contact__form-success" id="formSuccess">
+                        <i class="ri-checkbox-circle-line"></i> Thanks! I'll get back to you soon.
+                    </p>
+                </form>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ─── FOOTER ─── -->
+    <footer class="footer">
+        <p>Designed & built by <span>SamDev</span> · 2025</p>
+        <p class="footer__sub">Made with <i class="ri-heart-fill"></i> and lots of coffee</p>
+    </footer>
+
+    <script src="index.js"></script>
+</body>
+</html>
