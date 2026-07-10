@@ -141,3 +141,18 @@ mobileLinks.forEach(function(link) {
     });
 });
 
+// reveal on scroll
+var revealElements = document.querySelectorAll('.reveal');
+
+var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+        }
+    });
+}, { threshold: 0.1 });
+
+revealElements.forEach(function(el) {
+    observer.observe(el);
+});
+
