@@ -1,5 +1,4 @@
 // navbar scroll effect
-
 const navbar = document.getElementById('navbar');
 
 window.addEventListener('scroll', () => {
@@ -9,7 +8,6 @@ window.addEventListener('scroll', () => {
         navbar.classList.remove('scrolled');
     }
 });
-
 
 // social icons disclaimer
 const heroSocials = document.querySelectorAll('.hero__socials i');
@@ -25,23 +23,20 @@ heroSocials.forEach(function (icon) {
 });
 
 // cv alert
-
-const cvButton = document.querySelector('.about__cv-btn')
-const cvAlert = document.querySelector('.about__cv-alert')
+const cvButton = document.querySelector('.about__cv-btn');
+const cvAlert = document.querySelector('.about__cv-alert');
 
 cvButton.addEventListener('click', () => {
-    cvAlert.classList.add('active')
-
+    cvAlert.classList.add('active');
     setTimeout(() => {
-        cvAlert.classList.remove('active')
+        cvAlert.classList.remove('active');
     }, 5000);
-})
+});
 
-// contact
+// contact form
 var form = document.getElementById('contactForm');
 var formSuccess = document.getElementById('formSuccess');
 
-// Funcion para mostrar error en un campo
 function showError(inputId, errorId, message) {
     var input = document.getElementById(inputId);
     var error = document.getElementById(errorId);
@@ -49,7 +44,6 @@ function showError(inputId, errorId, message) {
     error.textContent = message;
 }
 
-// Funcion para limpiar error de un campo
 function clearError(inputId, errorId) {
     var input = document.getElementById(inputId);
     var error = document.getElementById(errorId);
@@ -57,33 +51,29 @@ function clearError(inputId, errorId) {
     error.textContent = '';
 }
 
-// Limpiar error cuando el usuario empieza a escribir
-document.getElementById('name').addEventListener('input', function() {
+document.getElementById('name').addEventListener('input', function () {
     clearError('name', 'nameError');
 });
-document.getElementById('email').addEventListener('input', function() {
+document.getElementById('email').addEventListener('input', function () {
     clearError('email', 'emailError');
 });
-document.getElementById('subject').addEventListener('input', function() {
+document.getElementById('subject').addEventListener('input', function () {
     clearError('subject', 'subjectError');
 });
-document.getElementById('message').addEventListener('input', function() {
+document.getElementById('message').addEventListener('input', function () {
     clearError('message', 'messageError');
 });
 
-// Submit del formulario
-form.addEventListener('submit', function(event) {
+form.addEventListener('submit', function (event) {
     event.preventDefault();
 
     var isValid = true;
 
-    // Validar nombre
     if (document.getElementById('name').value.trim() === '') {
         showError('name', 'nameError', 'Please enter your name.');
         isValid = false;
     }
 
-    // Validar email
     var emailValue = document.getElementById('email').value.trim();
     if (emailValue === '') {
         showError('email', 'emailError', 'Please enter your email.');
@@ -93,36 +83,32 @@ form.addEventListener('submit', function(event) {
         isValid = false;
     }
 
-    // Validar subject
     if (document.getElementById('subject').value.trim() === '') {
         showError('subject', 'subjectError', 'Please enter a subject.');
         isValid = false;
     }
 
-    // Validar message
     if (document.getElementById('message').value.trim() === '') {
         showError('message', 'messageError', 'Please write your message.');
         isValid = false;
     }
 
-    // Si todo esta bien, mostrar exito
     if (isValid) {
         form.reset();
         formSuccess.classList.add('active');
-        setTimeout(function() {
+        setTimeout(function () {
             formSuccess.classList.remove('active');
         }, 5000);
     }
 });
 
 // burger menu
-
 var burger = document.getElementById('burger');
 var burgerIcon = document.getElementById('burgerIcon');
 var mobileMenu = document.getElementById('mobileMenu');
 var mobileLinks = document.querySelectorAll('.mobile-menu a');
 
-burger.addEventListener('click', function() {
+burger.addEventListener('click', function () {
     mobileMenu.classList.toggle('open');
     if (mobileMenu.classList.contains('open')) {
         burgerIcon.classList.remove('ri-menu-line');
@@ -133,26 +119,35 @@ burger.addEventListener('click', function() {
     }
 });
 
-mobileLinks.forEach(function(link) {
-    link.addEventListener('click', function() {
+mobileLinks.forEach(function (link) {
+    link.addEventListener('click', function () {
         mobileMenu.classList.remove('open');
         burgerIcon.classList.remove('ri-close-line');
         burgerIcon.classList.add('ri-menu-line');
     });
 });
 
-// reveal on scroll
-var revealElements = document.querySelectorAll('.reveal');
+// reveal on scroll (works on .reveal elements, with reduced-motion support)
+var revealElements = document.querySelectorAll('[data-reveal]');
 
-var observer = new IntersectionObserver(function(entries) {
-    entries.forEach(function(entry) {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-        }
+// Respect users who don't want motion
+var prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+if (prefersReduced) {
+    revealElements.forEach(function (el) {
+        el.classList.add('is-visible');
     });
-}, { threshold: 0.1 });
+} else {
+    var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.12, rootMargin: '0px 0px -50px 0px' });
 
-revealElements.forEach(function(el) {
-    observer.observe(el);
-});
-
+    revealElements.forEach(function (el) {
+        observer.observe(el);
+    });
+}

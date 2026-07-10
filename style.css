@@ -55,6 +55,19 @@ body {
     padding-right: 5rem;
 }
 
+/* reveal animation */
+.reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+    will-change: opacity, transform;
+}
+
+.reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 /* navbar */
 .navbar {
     display: flex;
@@ -111,7 +124,7 @@ body {
     display: flex;
     align-items: center;
     padding: 2rem 5rem;
-    margin-top: 9rem;
+    margin-top: 5rem;
     border-bottom: 1px solid var(--border);
 }
 
@@ -242,7 +255,6 @@ body {
 }
 
 /* about */
-
 .about {
     padding-top: 3rem;
     padding-bottom: 3rem;
@@ -317,6 +329,12 @@ body {
     flex-direction: column;
     gap: 4px;
     border-radius: 5px;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.about__stat-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--accent);
 }
 
 .about__stat-number {
@@ -332,7 +350,6 @@ body {
 }
 
 /* skills */
-
 .skills {
     padding-top: 3rem;
     padding-bottom: 3rem;
@@ -369,12 +386,13 @@ body {
     justify-content: center;
     gap: 0.75rem;
     cursor: default;
-    transition: transform 0.2s ease, border-color 0.2s ease;
+    transition: transform 0.25s ease, border-color 0.25s ease, background-color 0.25s ease;
 }
 
 .skills__card:hover {
     transform: translateY(-5px);
     border-color: var(--accent);
+    background-color: var(--bg-secondary);
 }
 
 .skills__card:hover span {
@@ -384,17 +402,21 @@ body {
 .skills__card > i {
     font-size: 2rem;
     color: var(--accent);
+    transition: transform 0.25s ease;
+}
+
+.skills__card:hover > i {
+    transform: scale(1.15);
 }
 
 .skills__card > span {
     font-size: 0.8rem;
     color: var(--text-secondary);
     font-weight: 500;
-    transition: 0.2s ease;
+    transition: color 0.2s ease;
 }
 
 /* projects */
-
 .projects {
     padding-top: 3rem;
     padding-bottom: 3rem;
@@ -428,12 +450,11 @@ body {
     display: flex;
     flex-direction: column;
     gap: 0.75rem;
-    transition: all 0.2s ease;
+    transition: transform 0.25s ease, border-color 0.25s ease, background-color 0.25s ease;
 }
 
 .projects__card:hover {
     border-color: var(--accent);
-    background-color: var(--bg-secondary);
 }
 
 .projects__card-header {
@@ -449,6 +470,11 @@ body {
     border: 1px solid var(--border);
     margin-bottom: 1rem;
     border-radius: 5px;
+    transition: 0.25s ease;
+}
+
+.projects__card:hover .projects__card-icon {
+    transform: scale(1.1);
 }
 
 .projects__card-links {
@@ -460,12 +486,13 @@ body {
 .projects__card-links a {
     color: var(--text-secondary);
     font-size: 1.5rem;
-    transition: color 0.2s ease;
+    transition: color 0.2s ease, transform 0.2s ease;
     text-decoration: none;
 }
 
 .projects__card-links a:hover {
     color: var(--accent);
+    transform: translateY(-2px);
 }
 
 .projects__card-title {
@@ -536,6 +563,12 @@ body {
     gap: 12px;
     color: var(--text-secondary);
     font-size: 0.9rem;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.contact__info-item:hover {
+    color: var(--text-primary);
+    transform: translateX(4px);
 }
 
 .contact__info-item > i {
@@ -552,12 +585,13 @@ body {
 .contact__info-socials a {
     color: var(--text-secondary);
     font-size: 1.3rem;
-    transition: color 0.2s ease;
+    transition: color 0.2s ease, transform 0.2s ease;
     text-decoration: none;
 }
 
 .contact__info-socials a:hover {
     color: var(--accent);
+    transform: translateY(-2px);
 }
 
 .contact__form {
@@ -590,12 +624,13 @@ body {
     font-size: 0.9rem;
     resize: vertical;
     outline: none;
-    transition: border-color 0.2s ease;
+    transition: border-color 0.2s ease, background-color 0.2s ease;
 }
 
 .contact__form-group input:focus,
 .contact__form-group textarea:focus {
     border-color: var(--accent);
+    background-color: var(--bg-secondary);
 }
 
 .contact__form-group input.input--error,
@@ -623,11 +658,16 @@ body {
     gap: 0.5rem;
     align-items: center;
     justify-content: center;
-    transition: background-color 0.2s ease;
+    transition: background-color 0.2s ease, transform 0.2s ease;
 }
 
 .contact__form-btn:hover {
     background-color: var(--accent-dim);
+    transform: translateY(-2px);
+}
+
+.contact__form-btn:active {
+    transform: translateY(0);
 }
 
 .contact__form-success {
@@ -672,7 +712,6 @@ body {
 }
 
 /* responsive */
-
 .navbar__burger {
     display: none;
     background: none;
@@ -797,7 +836,7 @@ body {
     }
 
     .skills__grid {
-        flex-direction: column;
+        grid-template-columns: repeat(2, 1fr);
     }
 
     .skills__card {
@@ -817,17 +856,4 @@ body {
     .footer {
         padding: 2rem 1.5rem;
     }
-}
-
-/* animations */
-
-.reveal {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.4s ease, transform 0.4s ease;
-}
-
-.reveal.visible {
-    opacity: 1;
-    transform: translateY(0);
 }
