@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
 /* variables */
 :root {
     --bg-primary:     #0d1117;
@@ -8,7 +10,7 @@
     --text-primary:   #e6edf3;
     --text-secondary: #8b949e;
     --border:         #30363d;
-    --font:           'Inter', sans-serif;
+    --font:           'VT323', sans-serif;
 }
 
 /* reset */
@@ -89,7 +91,7 @@ body {
 }
 
 .navbar__logo > a {
-    font-size: 1.25rem;
+    font-size: 1.5rem;
     color: var(--text-primary);
     letter-spacing: 0;
     text-decoration: none;
@@ -110,7 +112,7 @@ body {
 .navbar__links > ul > li > a {
     text-decoration: none;
     color: var(--text-secondary);
-    font-size: 15px;
+    font-size: 18px;
     font-weight: 500;
     transition: color 0.2s ease;
 }
@@ -138,13 +140,13 @@ body {
 
 .hero__available {
     color: var(--accent);
-    font-size: 14px;
+    font-size: 17px;
     font-weight: 500;
     margin-bottom: 1rem;
 }
 
 .hero__available > i {
-    font-size: 14px;
+    font-size: 17px;
     animation: pulse 2s infinite;
 }
 
@@ -155,14 +157,13 @@ body {
 
 .hero__text > h1 {
     color: var(--text-primary);
-    font-size: 58px;
+    font-size: 75px;
     margin-top: 0;
     margin-bottom: 1rem;
 }
 
 .hero__text > h1 > span {
     color: var(--accent);
-    font-family: 'Cascadia Code';
     background-color: var(--bg-secondary);
     padding: 0.3rem 1rem;
     border-radius: 10px;
@@ -175,7 +176,7 @@ body {
 
 .hero__subtitle {
     color: var(--text-secondary);
-    font-size: 17px;
+    font-size: 20px;
     line-height: 2;
     font-weight: 400;
 }
@@ -189,17 +190,17 @@ body {
 .hero__btn-primary,
 .hero__btn-outline {
     padding: 0.9rem 1.4rem;
-    border-radius: 5px;
     border: none;
-    font-size: 0.9rem;
+    font-size: 20px;
     font-family: var(--font);
     cursor: pointer;
     font-weight: 500;
+    box-shadow: 6px 6px 0 rgba(48, 54, 61, 0.7);
 }
 
 .hero__btn-primary {
     background-color: var(--accent);
-    transition: background-color 0.2s ease;
+    transition: all 0.2s ease;
 }
 
 .hero__btn-primary:hover {
@@ -210,11 +211,17 @@ body {
     background-color: transparent;
     border: 1px solid var(--accent);
     color: var(--accent);
-    transition: background-color 0.2s ease;
+    transition: all 0.2s ease;
 }
 
 .hero__btn-outline:hover {
     background-color: rgba(61, 220, 151, 0.08);
+}
+
+.hero__btn-primary:active,
+.hero__btn-outline:active {
+    transform: translate(3px, 3px);
+    box-shadow: 0 0 0;
 }
 
 .hero__socials {
@@ -235,6 +242,7 @@ body {
 }
 
 .hero__alert {
+    font-size: 18px;
     color: var(--accent);
     opacity: 0;
     transition: opacity 0.2s ease;
@@ -249,9 +257,9 @@ body {
     width: 100%;
     height: 320px;
     object-fit: cover;
-    border-radius: 12px;
     border: 1px solid var(--border);
     filter: brightness(0.85);
+    box-shadow: 8px 8px 0 rgba(48, 54, 61, 0.7);
 }
 
 /* about */
@@ -278,7 +286,7 @@ body {
     color: var(--text-secondary);
     line-height: 1.6;
     text-align: justify;
-    font-size: 16px;
+    font-size: 20px;
     margin-bottom: 1rem;
 }
 
@@ -287,7 +295,7 @@ body {
     padding: 0.9rem 1.4rem;
     border-radius: 5px;
     border: none;
-    font-size: 0.9rem;
+    font-size: 20px;
     font-family: var(--font);
     cursor: pointer;
     font-weight: 500;
@@ -303,6 +311,7 @@ body {
 }
 
 .about__cv-alert {
+    font-size: 20px;
     padding-top: 0.5rem;
     color: var(--accent);
     opacity: 0;
