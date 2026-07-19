@@ -13,8 +13,8 @@ window.addEventListener('scroll', () => {
 const heroSocials = document.querySelectorAll('.hero__socials i');
 const heroAlert = document.querySelector('.hero__alert');
 
-heroSocials.forEach(function (icon) {
-    icon.addEventListener('click', function () {
+heroSocials.forEach((icon) => {
+    icon.addEventListener('click', () => {
         heroAlert.classList.add('active');
         setTimeout(function () {
             heroAlert.classList.remove('active');
@@ -34,8 +34,8 @@ cvButton.addEventListener('click', () => {
 });
 
 // contact form
-var form = document.getElementById('contactForm');
-var formSuccess = document.getElementById('formSuccess');
+const form = document.getElementById('contactForm');
+const formSuccess = document.getElementById('formSuccess');
 
 function showError(inputId, errorId, message) {
     var input = document.getElementById(inputId);
@@ -51,23 +51,23 @@ function clearError(inputId, errorId) {
     error.textContent = '';
 }
 
-document.getElementById('name').addEventListener('input', function () {
+document.getElementById('name').addEventListener('input', () => {
     clearError('name', 'nameError');
 });
-document.getElementById('email').addEventListener('input', function () {
+document.getElementById('email').addEventListener('input', () => {
     clearError('email', 'emailError');
 });
-document.getElementById('subject').addEventListener('input', function () {
+document.getElementById('subject').addEventListener('input', () => {
     clearError('subject', 'subjectError');
 });
-document.getElementById('message').addEventListener('input', function () {
+document.getElementById('message').addEventListener('input', () => {
     clearError('message', 'messageError');
 });
 
 form.addEventListener('submit', function (event) {
     event.preventDefault();
 
-    var isValid = true;
+    let isValid = true;
 
     if (document.getElementById('name').value.trim() === '') {
         showError('name', 'nameError', 'Please enter your name.');
@@ -96,19 +96,19 @@ form.addEventListener('submit', function (event) {
     if (isValid) {
         form.reset();
         formSuccess.classList.add('active');
-        setTimeout(function () {
+        setTimeout(() => {
             formSuccess.classList.remove('active');
         }, 5000);
     }
 });
 
 // burger menu
-var burger = document.getElementById('burger');
-var burgerIcon = document.getElementById('burgerIcon');
-var mobileMenu = document.getElementById('mobileMenu');
-var mobileLinks = document.querySelectorAll('.mobile-menu a');
+const burger = document.getElementById('burger');
+const burgerIcon = document.getElementById('burgerIcon');
+const mobileMenu = document.getElementById('mobileMenu');
+const mobileLinks = document.querySelectorAll('.mobile-menu a');
 
-burger.addEventListener('click', function () {
+burger.addEventListener('click', () => {
     mobileMenu.classList.toggle('open');
     if (mobileMenu.classList.contains('open')) {
         burgerIcon.classList.remove('ri-menu-line');
@@ -119,7 +119,7 @@ burger.addEventListener('click', function () {
     }
 });
 
-mobileLinks.forEach(function (link) {
+mobileLinks.forEach((link) => {
     link.addEventListener('click', function () {
         mobileMenu.classList.remove('open');
         burgerIcon.classList.remove('ri-close-line');
@@ -127,19 +127,19 @@ mobileLinks.forEach(function (link) {
     });
 });
 
-// reveal on scroll (works on .reveal elements, with reduced-motion support)
-var revealElements = document.querySelectorAll('[data-reveal]');
+// reveal on scroll
+const revealElements = document.querySelectorAll('[data-reveal]');
 
-// Respect users who don't want motion
-var prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+// no motion
+const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 if (prefersReduced) {
-    revealElements.forEach(function (el) {
+    revealElements.forEach((el) => {
         el.classList.add('is-visible');
     });
 } else {
-    var observer = new IntersectionObserver(function (entries) {
-        entries.forEach(function (entry) {
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('is-visible');
                 observer.unobserve(entry.target);

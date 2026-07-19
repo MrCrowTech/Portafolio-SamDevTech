@@ -117,11 +117,13 @@ body {
     transition: all 0.2s ease;
     padding: 0.5rem 1rem;
     border-radius: 7px;
+    border: 1px solid transparent;
 }
 
 .navbar__links > ul > li > a:hover {
     color: var(--accent);
     background-color: var(--bg-card);
+    border: 1px solid var(--border);
 }
 
 /* hero */
