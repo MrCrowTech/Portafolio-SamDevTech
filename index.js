@@ -10,7 +10,7 @@ window.addEventListener('scroll', () => {
 });
 
 // social icons disclaimer
-const heroSocials = document.querySelectorAll('.hero__socials i');
+const heroSocials = document.querySelectorAll('.err');
 const heroAlert = document.querySelector('.hero__alert');
 
 heroSocials.forEach((icon) => {
@@ -67,7 +67,7 @@ document.getElementById('message').addEventListener('input', () => {
 form.addEventListener('submit', function (event) {
     event.preventDefault();
 
-    let isValid = true;
+    var isValid = true;
 
     if (document.getElementById('name').value.trim() === '') {
         showError('name', 'nameError', 'Please enter your name.');
@@ -94,11 +94,35 @@ form.addEventListener('submit', function (event) {
     }
 
     if (isValid) {
-        form.reset();
-        formSuccess.classList.add('active');
-        setTimeout(() => {
-            formSuccess.classList.remove('active');
-        }, 5000);
+        var formData = new FormData(form);
+        var object = Object.fromEntries(formData);
+        var json = JSON.stringify(object);
+
+        fetch('https://api.web3forms.com/submit', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            },
+            body: json
+        })
+        .then(function (response) { return response.json(); })
+        .then(function (result) {
+            if (result.success) {
+                form.reset();
+                formSuccess.classList.add('active');
+                setTimeout(function () {
+                    formSuccess.classList.remove('active');
+                }, 5000);
+            } else {
+                formSuccess.textContent = 'Something went wrong. Try again.';
+                formSuccess.classList.add('active');
+            }
+        })
+        .catch(function () {
+            formSuccess.textContent = 'Network error. Try again.';
+            formSuccess.classList.add('active');
+        });
     }
 });
 

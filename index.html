@@ -15,7 +15,7 @@
     <!-- NAVBAR -->
     <nav class="navbar" id="navbar">
         <div class="navbar__logo">
-            <a href="index.html" style="font-family: 'VT323';">Sam<span>Dev</span>.</a>
+            <a href="index.html" style="font-family: 'VT323';">Sam<span>Dev</span></a>
         </div>
         <div class="navbar__links">
             <ul>
@@ -50,9 +50,9 @@
                 <a href="#contact" class="hero__btn-outline">Get in touch</a>
             </div>
             <div class="hero__socials">
-                <i class="ri-github-fill"></i>
-                <i class="ri-linkedin-box-fill"></i>
-                <i class="ri-twitter-x-fill"></i>
+                <a href="https://github.com/MrCrowTech" target="_blank" class="github"><i class="ri-github-fill"></i></a>
+                <i class="ri-linkedin-box-fill err"></i>
+                <i class="ri-twitter-x-fill err"></i>
             </div>
             <div class="hero__disclaimer">
                 <p class="hero__alert">Still no links yet. Very soon...</p>
@@ -274,24 +274,25 @@
                 </div>
 
                 <form class="contact__form" id="contactForm" novalidate>
+                    <input type="hidden" name="access_key" value="e202fedc-cc7d-4a1e-9842-ca6c40e3d409"/>
                     <div class="contact__form-group">
                         <label for="name">Name</label>
-                        <input type="text" id="name" placeholder="Your name" autocomplete="off" />
+                        <input type="text" id="name" name="name" placeholder="Your name" autocomplete="off" />
                         <span class="contact__form-error" id="nameError"></span>
                     </div>
                     <div class="contact__form-group">
                         <label for="email">Email</label>
-                        <input type="email" id="email" placeholder="your@email.com" autocomplete="off" />
+                        <input type="email" id="email" name="email" placeholder="your@email.com" autocomplete="off" />
                         <span class="contact__form-error" id="emailError"></span>
                     </div>
                     <div class="contact__form-group">
                         <label for="subject">Subject</label>
-                        <input type="text" id="subject" placeholder="What's this about?" autocomplete="off" />
+                        <input type="text" id="subject" name="subject" placeholder="What's this about?" autocomplete="off" />
                         <span class="contact__form-error" id="subjectError"></span>
                     </div>
                     <div class="contact__form-group">
                         <label for="message">Message</label>
-                        <textarea id="message" rows="5" placeholder="Tell me about your project..."></textarea>
+                        <textarea id="message" name="message" rows="5" placeholder="Tell me about your project..."></textarea>
                         <span class="contact__form-error" id="messageError"></span>
                     </div>
                     <button type="submit" class="contact__form-btn">

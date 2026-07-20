@@ -82,7 +82,7 @@ body {
     z-index: 100;
     padding: 1.5rem 3rem;
     border-bottom: 1px solid var(--border);
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(20px);
     transition: padding 0.2s ease;
 }
 
@@ -248,8 +248,20 @@ body {
     color: var(--accent);
 }
 
+.github {
+    color: var(--text-secondary);
+    font-size: 23px;
+    cursor: pointer;
+    transform: 0.2s ease;
+    text-decoration: none;
+}
+
+.github:hover {
+    color: var(--accent);
+}
+
 .hero__alert {
-    font-size: 18px;
+    font-size: 20px;
     color: var(--accent);
     opacity: 0;
     transition: opacity 0.2s ease;
@@ -349,11 +361,10 @@ body {
     display: flex;
     flex-direction: column;
     gap: 4px;
-    transition: transform 0.2s ease, border-color 0.2s ease;
+    transition: 0.2s ease;
 }
 
 .about__stat-card:hover {
-    transform: translateY(-4px);
     border-color: var(--accent);
 }
 
@@ -365,7 +376,7 @@ body {
 }
 
 .about__stat-label {
-    font-size: 0.8rem;
+    font-size: 16px;
     color: var(--text-secondary);
 }
 
@@ -688,7 +699,7 @@ body {
 
 .contact__form-success {
     color: var(--accent);
-    font-size: 0.9rem;
+    font-size: 20px;
     font-weight: 500;
     opacity: 0;
     overflow: hidden;
