@@ -592,12 +592,11 @@ body {
     gap: 12px;
     color: var(--text-secondary);
     font-size: 18px;
-    transition: color 0.2s ease, transform 0.2s ease;
+    transition: 0.2s ease;
 }
 
 .contact__info-item:hover {
     color: var(--text-primary);
-    transform: translateX(4px);
 }
 
 .contact__info-item > i {
@@ -611,14 +610,19 @@ body {
     margin-top: 0.5rem;
 }
 
-.contact__info-socials a {
+.contact__info-socials i {
+    cursor: pointer;
+}
+
+.contact__info-socials a, i {
     color: var(--text-secondary);
     font-size: 1.3rem;
     transition: all 0.2s ease;
     text-decoration: none;
 }
 
-.contact__info-socials a:hover {
+.contact__info-socials a:hover,
+.contact__info-socials i:hover {
     color: var(--accent);
 }
 
@@ -676,6 +680,7 @@ body {
     padding: 0.9rem 1.4rem;
     border: none;
     font-size: 18px;
+    color: var(--bg-primary);
     font-family: var(--font);
     cursor: pointer;
     font-weight: 500;
@@ -686,6 +691,10 @@ body {
     justify-content: center;
     transition: 0.2s ease;
     box-shadow: 6px 6px 0 var(--bg-secondary);
+}
+
+.contact__form-btn i {
+    color: var(--bg-primary);
 }
 
 .contact__form-btn:hover {
@@ -740,6 +749,17 @@ body {
 .footer__sub i {
     color: #f85149;
     font-size: 0.75rem;
+}
+
+.footer__alert {
+    font-size: 20px;
+    color: var(--accent);
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+.footer__alert.active {
+    opacity: 1;
 }
 
 /* responsive */

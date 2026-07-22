@@ -175,3 +175,18 @@ if (prefersReduced) {
         observer.observe(el);
     });
 }
+
+// footer disclaimer
+
+const footerLinks = document.querySelectorAll('.f_err')
+const footerDisc = document.querySelector('.footer__alert')
+
+footerLinks.forEach((link) => {
+    link.addEventListener('click', () => {
+        footerDisc.classList.add('active')
+
+        setTimeout(() => {
+            footerDisc.classList.remove('active')
+        }, 3000);
+    })
+})
