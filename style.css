@@ -402,13 +402,13 @@ img, svg { display: block; max-width: 100%; }
 
 .window__note {
     font-size: 0.8rem;
-    color: var(--text-dim);
+    color: #555;
     font-style: italic;
 }
 
 .window__note--inline {
     display: block;
-    color: #555;
+    color: __;
     margin-top: 0.5rem;
 }
 
@@ -955,5 +955,5 @@ img, svg { display: block; max-width: 100%; }
     .hero__buttons .btn { width: 100%; }
 
     .window { box-shadow: 4px 4px 0 #000; }
-    .window__header { padding: 0.4rem 0.6rem; }
+    .window__header { padding: 1.5rem 0.6rem; }
 }
