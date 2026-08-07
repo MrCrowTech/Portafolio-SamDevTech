@@ -1,192 +1,84 @@
-// navbar scroll effect
+// navbar
 const navbar = document.getElementById('navbar');
-
-window.addEventListener('scroll', () => {
-    if (window.scrollY > 50) {
-        navbar.classList.add('scrolled');
-    } else {
-        navbar.classList.remove('scrolled');
-    }
-});
-
-// social icons disclaimer
-const heroSocials = document.querySelectorAll('.err');
-const heroAlert = document.querySelector('.hero__alert');
-
-heroSocials.forEach((icon) => {
-    icon.addEventListener('click', () => {
-        heroAlert.classList.add('active');
-        setTimeout(function () {
-            heroAlert.classList.remove('active');
-        }, 3000);
+if (navbar) {
+    window.addEventListener('scroll', () => {
+        navbar.classList.toggle('scrolled', window.scrollY > 30);
     });
-});
-
-// cv alert
-const cvButton = document.querySelector('.about__cv-btn');
-const cvAlert = document.querySelector('.about__cv-alert');
-
-cvButton.addEventListener('click', () => {
-    cvAlert.classList.add('active');
-    setTimeout(() => {
-        cvAlert.classList.remove('active');
-    }, 5000);
-});
-
-// contact form
-const form = document.getElementById('contactForm');
-const formSuccess = document.getElementById('formSuccess');
-
-function showError(inputId, errorId, message) {
-    var input = document.getElementById(inputId);
-    var error = document.getElementById(errorId);
-    input.classList.add('input--error');
-    error.textContent = message;
 }
 
-function clearError(inputId, errorId) {
-    var input = document.getElementById(inputId);
-    var error = document.getElementById(errorId);
-    input.classList.remove('input--error');
-    error.textContent = '';
-}
-
-document.getElementById('name').addEventListener('input', () => {
-    clearError('name', 'nameError');
-});
-document.getElementById('email').addEventListener('input', () => {
-    clearError('email', 'emailError');
-});
-document.getElementById('subject').addEventListener('input', () => {
-    clearError('subject', 'subjectError');
-});
-document.getElementById('message').addEventListener('input', () => {
-    clearError('message', 'messageError');
-});
-
-form.addEventListener('submit', function (event) {
-    event.preventDefault();
-
-    var isValid = true;
-
-    if (document.getElementById('name').value.trim() === '') {
-        showError('name', 'nameError', 'Please enter your name.');
-        isValid = false;
-    }
-
-    var emailValue = document.getElementById('email').value.trim();
-    if (emailValue === '') {
-        showError('email', 'emailError', 'Please enter your email.');
-        isValid = false;
-    } else if (!emailValue.includes('@')) {
-        showError('email', 'emailError', 'Enter a valid email address.');
-        isValid = false;
-    }
-
-    if (document.getElementById('subject').value.trim() === '') {
-        showError('subject', 'subjectError', 'Please enter a subject.');
-        isValid = false;
-    }
-
-    if (document.getElementById('message').value.trim() === '') {
-        showError('message', 'messageError', 'Please write your message.');
-        isValid = false;
-    }
-
-    if (isValid) {
-        var formData = new FormData(form);
-        var object = Object.fromEntries(formData);
-        var json = JSON.stringify(object);
-
-        fetch('https://api.web3forms.com/submit', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'Accept': 'application/json'
-            },
-            body: json
-        })
-        .then(function (response) { return response.json(); })
-        .then(function (result) {
-            if (result.success) {
-                form.reset();
-                formSuccess.classList.add('active');
-                setTimeout(function () {
-                    formSuccess.classList.remove('active');
-                }, 5000);
-            } else {
-                formSuccess.textContent = 'Something went wrong. Try again.';
-                formSuccess.classList.add('active');
-            }
-        })
-        .catch(function () {
-            formSuccess.textContent = 'Network error. Try again.';
-            formSuccess.classList.add('active');
-        });
-    }
-});
-
-// burger menu
+// mobile
 const burger = document.getElementById('burger');
 const burgerIcon = document.getElementById('burgerIcon');
 const mobileMenu = document.getElementById('mobileMenu');
-const mobileLinks = document.querySelectorAll('.mobile-menu a');
-
-burger.addEventListener('click', () => {
-    mobileMenu.classList.toggle('open');
-    if (mobileMenu.classList.contains('open')) {
-        burgerIcon.classList.remove('ri-menu-line');
-        burgerIcon.classList.add('ri-close-line');
-    } else {
-        burgerIcon.classList.remove('ri-close-line');
-        burgerIcon.classList.add('ri-menu-line');
-    }
-});
-
-mobileLinks.forEach((link) => {
-    link.addEventListener('click', function () {
-        mobileMenu.classList.remove('open');
-        burgerIcon.classList.remove('ri-close-line');
-        burgerIcon.classList.add('ri-menu-line');
+if (burger && mobileMenu) {
+    burger.addEventListener('click', () => {
+        mobileMenu.classList.toggle('open');
+        if (burgerIcon) {
+            burgerIcon.className = mobileMenu.classList.contains('open')
+                ? 'ri-close-line'
+                : 'ri-menu-line';
+        }
     });
-});
-
-// reveal on scroll
-const revealElements = document.querySelectorAll('[data-reveal]');
-
-// no motion
-const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-if (prefersReduced) {
-    revealElements.forEach((el) => {
-        el.classList.add('is-visible');
-    });
-} else {
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('is-visible');
-                observer.unobserve(entry.target);
-            }
+    mobileMenu.querySelectorAll('a').forEach(a => {
+        a.addEventListener('click', () => {
+            mobileMenu.classList.remove('open');
+            if (burgerIcon) burgerIcon.className = 'ri-menu-line';
         });
-    }, { threshold: 0.12, rootMargin: '0px 0px -50px 0px' });
-
-    revealElements.forEach(function (el) {
-        observer.observe(el);
     });
 }
 
-// footer disclaimer
+// contact
+const form = document.getElementById('contactForm');
+const success = document.getElementById('formSuccess');
 
-const footerLinks = document.querySelectorAll('.f_err')
-const footerDisc = document.querySelector('.footer__alert')
+function showError(id, msg) {
+    const el = document.getElementById(id);
+    if (el) el.textContent = msg;
+    const inputId = id.replace('Error', '');
+    const input = document.getElementById(inputId);
+    if (input) input.classList.add('input--error');
+}
 
-footerLinks.forEach((link) => {
-    link.addEventListener('click', () => {
-        footerDisc.classList.add('active')
+function clearError(id) {
+    const el = document.getElementById(id);
+    if (el) el.textContent = '';
+    const inputId = id.replace('Error', '');
+    const input = document.getElementById(inputId);
+    if (input) input.classList.remove('input--error');
+}
 
-        setTimeout(() => {
-            footerDisc.classList.remove('active')
-        }, 3000);
-    })
-})
+if (form) {
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        let valid = true;
+        ['name', 'email', 'subject', 'message'].forEach(f => clearError(f + 'Error'));
+
+        const name = form.name.value.trim();
+        const email = form.email.value.trim();
+        const subject = form.subject.value.trim();
+        const message = form.message.value.trim();
+
+        if (!name) { showError('nameError', 'Name is required'); valid = false; }
+        if (!email) { showError('emailError', 'Email is required'); valid = false; }
+        else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+            showError('emailError', 'Enter a valid email'); valid = false;
+        }
+        if (!subject) { showError('subjectError', 'Subject is required'); valid = false; }
+        if (!message) { showError('messageError', 'Message is required'); valid = false; }
+
+        if (valid) {
+            const data = new FormData(form);
+            fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                body: data
+            }).then(r => r.json()).then(() => {
+                if (success) success.classList.add('active');
+                form.reset();
+                setTimeout(() => success && success.classList.remove('active'), 5000);
+            }).catch(() => {
+                if (success) success.classList.add('active');
+                form.reset();
+            });
+        }
+    });
+}
