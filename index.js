@@ -1,10 +1,14 @@
 // navbar
 const navbar = document.getElementById('navbar');
-if (navbar) {
-    window.addEventListener('scroll', () => {
-        navbar.classList.toggle('scrolled', window.scrollY > 30);
-    });
-}
+
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 30) {
+        navbar.classList.add('scrolled')
+    }
+    else {
+        navbar.classList.remove('scrolled')
+    }
+})
 
 // mobile
 const burger = document.getElementById('burger');
