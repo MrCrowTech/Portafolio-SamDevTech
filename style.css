@@ -365,8 +365,8 @@ img, svg { display: block; max-width: 100%; }
 }
 
 .window__btn--sm {
-    width: 18px;
-    height: 18px;
+    width: 23px;
+    height: 23px;
     font-size: 0.7rem;
 }
 
@@ -557,7 +557,7 @@ img, svg { display: block; max-width: 100%; }
 
 .stat-card--blue   { background: var(--c-blue); }
 .stat-card--green  { background: var(--c-green); }
-.stat-card--purple { background: var(--c-purple); color: #fff; }
+.stat-card--purple { background: var(--c-purple); }
 
 .stat-card__number {
     font-size: 2.4rem;
@@ -580,7 +580,6 @@ img, svg { display: block; max-width: 100%; }
 }
 
 .skill-card {
-    position: relative;
     background: var(--bg-soft);
     border: var(--border-soft);
     padding: 1.25rem 0.75rem 1rem;
@@ -942,7 +941,7 @@ img, svg { display: block; max-width: 100%; }
 .footer__link-icon--yellow { background: var(--c-yellow); }
 .footer__link-icon--green  { background: var(--c-green); }
 .footer__link-icon--blue   { background: var(--c-blue); }
-.footer__link-icon--purple { background: var(--c-purple); color: #fff; }
+.footer__link-icon--purple { background: var(--c-purple); }
 .footer__link-icon--orange { background: var(--c-orange); }
 
 .footer__copy {
