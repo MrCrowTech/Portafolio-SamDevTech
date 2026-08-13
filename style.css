@@ -340,7 +340,7 @@ img, svg { display: block; max-width: 100%; }
     letter-spacing: 0.3px;
 }
 
-.window__title i { font-size: 0.85rem; }
+.window__title i { font-size: 1rem; }
 
 .window__buttons {
     display: inline-flex;
@@ -605,11 +605,11 @@ img, svg { display: block; max-width: 100%; }
     color: #1a1a1a;
 }
 
-.skill-card__icon--orange { background: var(--c-orange); color: #fff; }
+.skill-card__icon--orange { background: var(--c-orange); }
 .skill-card__icon--blue   { background: var(--c-blue); }
 .skill-card__icon--yellow { background: var(--c-yellow); }
 .skill-card__icon--green  { background: var(--c-green); }
-.skill-card__icon--purple { background: var(--c-purple); color: #fff; }
+.skill-card__icon--purple { background: var(--c-purple); }
 
 .skill-card__label {
     font-size: 0.85rem;
@@ -647,8 +647,8 @@ img, svg { display: block; max-width: 100%; }
 }
 
 .project-card__cover--yellow { background: var(--c-yellow); color: #1a1a1a; }
-.project-card__cover--green  { background: var(--c-green); }
-.project-card__cover--purple { background: var(--c-purple); }
+.project-card__cover--green  { background: var(--c-green);  color: #1a1a1a;}
+.project-card__cover--purple { background: var(--c-purple); color: #1a1a1a;}
 .project-card__cover--blue   { background: var(--c-blue); }
 .project-card__cover--orange { background: var(--c-orange); }
 
