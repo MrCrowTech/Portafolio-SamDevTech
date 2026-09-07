@@ -64,10 +64,20 @@ img, svg { display: block; max-width: 100%; }
     top: 570px;
     transform: rotate(-30deg);
     transition: 0.3s ease;
+    animation: pulse 1s ease-in-out infinite alternate;
 }
 
 .arrow_keys img:hover {
     transform: rotate(0deg);
+}
+
+@keyframes pulse {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.1);  /* usa negativo para que "suba" */
+    }
 }
 
 /* navbar */
@@ -524,11 +534,6 @@ img, svg { display: block; max-width: 100%; }
 
 .section__subtitle img {
     width: 40px;
-    transition: 0.3s ease;
-}
-
-.section__subtitle img:hover {
-    transform: translateY(-5px);
 }
 
 /* about */
