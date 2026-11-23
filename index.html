@@ -1,456 +1,237 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SamDev | Front-End Developer</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.css" integrity="sha512-kJlvECunwXftkPwyvHbclArO8wszgBGisiLeuDFwNM8ws+wKIw0sv1os3ClWZOcrEB2eRXULYUsm8OVRGJKwGA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />   
+    <title>Portfolio SamDev</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.9.1/remixicon.css" integrity="sha512-FdAV4hphiNQnSV3CopyZQ5GY8ZNiwmI0pGo8meKtmmKjtiro8TNuRB6tqanbQo+tMGRcYxYJkBT5lQTe/3oTlQ==" crossorigin="anonymous" referrerpolicy="no-referrer">
 </head>
-<body>
+<body class="bd">
+    
+    <div class="navbar">
+        <nav>
 
-    <!-- NAVBAR -->
-    <nav class="navbar" id="navbar">
-        <a href="index.html" class="navbar__logo">
-            <span>Sam</span><span class="navbar__logo-accent">Dev</span><span class="navbar__logo-sup">_</span>
-        </a>
-        <div class="navbar__links">
-            <a href="#about" class="navbar__link">
-                <span class="navbar__link-icon navbar__link-icon--yellow">01</span>
-                ABOUT
-            </a>
-            <a href="#skills" class="navbar__link">
-                <span class="navbar__link-icon navbar__link-icon--green">
-                    <i class="ri-folder-open-fill"></i>
-                </span>
-                SKILLS
-            </a>
-            <a href="#projects" class="navbar__link">
-                <span class="navbar__link-icon navbar__link-icon--blue">&lt;/&gt;</span>
-                PROJECTS
-            </a>
-            <a href="#contact" class="navbar__link">
-                <span class="navbar__link-icon navbar__link-icon--purple">
-                    <i class="ri-terminal-box-fill"></i>
-                </span>
-                CONTACT
-            </a>
-        </div>
-        <a href="#contact" class="navbar__cta">
-            Hire me
-        </a>
-        <button class="navbar__burger" id="burger">
-            <i class="ri-menu-line" id="burgerIcon"></i>
-        </button>
-    </nav>
-    <div class="mobile-menu" id="mobileMenu">
-        <a href="#about">About</a>
-        <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
-    </div>
-
-    <!-- HERO -->
-    <section class="hero" id="home">
-        <div class="hero__grid-bg"></div>
-
-        <div class="hero__inner">
-            <div class="hero__left">
-                <h1 class="hero__title">
-                    <span class="hero__title-line">samdev</span>
-                    <span class="hero__title-line hero__title-line--blue">is building</span>
-                </h1>
-                <h2 class="hero__subtitle">Front-End Developer crafting clean,<br>fast &amp; accessible user interfaces.</h2>
-
-                <div class="hero__pill">
-                    <span class="hero__pill-bracket">{</span>
-                    <span class="hero__pill-m">samdev</span>
-                    <span class="hero__pill-bracket">}</span>
-                    <span class="hero__pill-text">open to opportunities</span>
-                </div>
-
-                <div class="hero__buttons">
-                    <a href="#projects" class="btn btn--green">View my work</a>
-                    <a href="#contact" class="btn btn--orange">Get in touch</a>
+            <div class="left-side">
+                <div class="logo">
+                    <div class="logo-cont">
+                    <h1><span>&lt;</span> SamDev <span>/&gt;</span></h1> 
+                    </div>
                 </div>
             </div>
 
-            <div class="hero__right">
-                <div class="window">
-                    <div class="window__header">
-                        <span class="window__title">
-                            <i class="ri-github-fill"></i> github.com/MrCrowTech
-                        </span>
-                        <div class="window__buttons">
-                            <span class="window__btn"><i class="fa-solid fa-minus"></i></span>
-                            <span class="window__btn"><i class="fa-solid fa-plus"></i></span>
-                            <span class="window__btn"><i class="fa-solid fa-x"></i></span>
-                        </div>
-                    </div>
-                    <div class="window__body window__body--code">
-                        <div class="code-line"><span class="code-keyword">const</span> <span class="code-var">sami</span> <span class="code-op">=</span> <span class="code-brace">{</span></div>
-                        <div class="code-line code-line--indent">role: <span class="code-string">"Front-End Developer"</span>,</div>
-                        <div class="code-line code-line--indent">stack: [<span class="code-string">"JS"</span>, <span class="code-string">"Vue"</span>, <span class="code-string">"React"</span>, <span class="code-string">"Svelte"</span>],</div>
-                        <div class="code-line code-line--indent">available: <span class="code-bool">true</span>,</div>
-                        <div class="code-line code-line--indent">build: <span class="code-fn">()</span> =&gt; <span class="code-string">"clean UIs"</span></div>
-                        <div class="code-line"><span class="code-brace">}</span></div>
-                        <div class="code-line code-line--muted"><span class="code-comment">// let's build something</span></div>
+            <div class="right-side">
+                <div class="links">
+                    <div class="links_cont">
+                        <ul>
+                            <li>
+                            <a href="#about">About</a>
+                            </li>
+                            <li>
+                            <a href="#skills">Skills</a>
+                            </li>
+                            <li>
+                            <a href="#projects">Projects</a>
+                            </li>
+                            <li>
+                            <a href="#contact">Contact</a>
+                            </li>
+                        </ul>
                     </div>
                 </div>
-                <span class="hero__tag hero__tag--new">HELLO<br>WORLD!</span>
-            </div>
-        </div>
-    </section>
 
-    <div class="arrow_keys">
-        <img src="https://mouredev.pro/icons/key_directions_dark.svg" alt="">
+                <div class="theme-toggle">
+                    <div class="theme-toggle_cont">
+                        <button class="btn1" id="light_btn"><i class="ri-sun-line"></i></button>
+                        <button class="btn2" id="dark_btn"><i class="ri-moon-line"></i></button>
+                    </div>
+                </div>
+            </div>
+            
+        </nav>
     </div>
 
-    <!-- ABOUT -->
-    <section class="section" id="about">
-        <div class="section__container">
-            <h2 class="section__title">
-                <span class="section__number">01 /</span>About me
-            </h2>
-            <p class="section__subtitle"><img src="https://mouredev.pro/icons/key_dot_dark.svg" alt="">A self-taught dev turning ideas into shipped products.</p>
+    <main>
 
-            <div class="window">
-                <div class="window__header">
-                    <span class="window__title">
-                        <i class="fa-solid fa-user"></i> about.txt
-                    </span>
-                    <div class="window__buttons">
-                        <span class="window__btn"><i class="fa-solid fa-minus"></i></span>
-                        <span class="window__btn"><i class="fa-solid fa-plus"></i></span>
-                        <span class="window__btn"><i class="fa-solid fa-x"></i></span>
-                    </div>
-                </div>
-                <div class="window__body window__body--text">
-                    <p>I'm a self-taught Front-End Developer passionate about building digital products that are both visually sharp and technically solid. I love turning complex problems into simple, beautiful solutions.</p>
-                    <p>When I'm not coding, you'll find me exploring design systems, contributing to open-source projects, or learning something new. I believe in writing clean code and building things that last.</p>
-                    <button class="btn btn--green btn--sm"><i class="ri-download-2-line"></i>Download CV</button>
-                    <span class="window__note">CV coming soon — stay tuned.</span>
-                </div>
+        <!-- HERO -->
+        <section class="hero" id="home">
+            <p class="hero__eyebrow">Front-End Developer</p>
+            <h2 class="hero__title">Building clean, fast &amp; accessible interfaces.</h2>
+            <p class="hero__text">I'm a self-taught developer turning ideas into shipped products. Open to opportunities.</p>
+            <div class="hero__buttons">
+                <a href="#projects" class="btn btn--primary">View my work</a>
+                <a href="#contact" class="btn btn--ghost">Get in touch</a>
+            </div>
+        </section>
+
+        <!-- ABOUT -->
+        <section class="section" id="about">
+            <div class="section__header">
+                <p class="section__number">01 /</p>
+                <h2 class="section__title">About me</h2>
+            </div>
+
+            <div class="about__text">
+                <p>I'm a self-taught Front-End Developer passionate about building digital products that are both visually sharp and technically solid. I love turning complex problems into simple, beautiful solutions.</p>
+                <p>When I'm not coding, you'll find me exploring design systems, contributing to open-source projects, or learning something new. I believe in writing clean code and building things that last.</p>
             </div>
 
             <div class="stats">
-                <div class="stat-card">
-                    <span class="stat-card__number">1+</span>
-                    <span class="stat-card__label">Year of experience</span>
+                <div class="card stat">
+                    <span class="stat__number">1+</span>
+                    <span class="stat__label">Year of experience</span>
                 </div>
-                <div class="stat-card stat-card--blue">
-                    <span class="stat-card__number">10+</span>
-                    <span class="stat-card__label">Projects completed</span>
+                <div class="card stat">
+                    <span class="stat__number">10+</span>
+                    <span class="stat__label">Projects completed</span>
                 </div>
-                <div class="stat-card stat-card--green">
-                    <span class="stat-card__number">5+</span>
-                    <span class="stat-card__label">Happy clients</span>
+                <div class="card stat">
+                    <span class="stat__number">5+</span>
+                    <span class="stat__label">Happy clients</span>
                 </div>
-                <div class="stat-card stat-card--purple">
-                    <span class="stat-card__number">∞</span>
-                    <span class="stat-card__label">Lines of code</span>
+                <div class="card stat">
+                    <span class="stat__number">∞</span>
+                    <span class="stat__label">Lines of code</span>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- SKILLS -->
-    <section class="section" id="skills">
-        <div class="section__container">
-            <h2 class="section__title">
-                <span class="section__number">02 /</span>Skills &amp; Tools
-            </h2>
-            <p class="section__subtitle"><img src="https://mouredev.pro/icons/key_dot_dark.svg" alt="">Technologies I work with on a daily basis.</p>
+        <!-- SKILLS -->
+        <section class="section" id="skills">
+            <div class="section__header">
+                <p class="section__number">02 /</p>
+                <h2 class="section__title">Skills &amp; Tools</h2>
+                <p class="section__subtitle">Technologies I work with on a daily basis.</p>
+            </div>
 
             <div class="skills-grid">
-                <div class="skill-card">
-                    <div class="skill-card__icon skill-card__icon--orange">
-                        <i class="fa-brands fa-html5"></i>
-                    </div>
-                    <span class="skill-card__label">HTML 5</span>
-                </div>
-                <div class="skill-card">
-                    <div class="skill-card__icon skill-card__icon--blue">
-                        <i class="fa-brands fa-css3"></i>
-                    </div>
-                    <span class="skill-card__label">CSS 3</span>
-                </div>
-                <div class="skill-card">
-                    <div class="skill-card__icon skill-card__icon--yellow">
-                        <i class="fa-brands fa-square-js"></i>
-                    </div>
-                    <span class="skill-card__label">JavaScript</span>
-                </div>
-                <div class="skill-card">
-                    <div class="skill-card__icon skill-card__icon--purple">
-                        <i class="fa-solid fa-database"></i>
-                    </div>
-                    <span class="skill-card__label">SQL</span>
-                </div>
-                <div class="skill-card">
-                    <div class="skill-card__icon skill-card__icon--purple">
-                        <i class="fa-brands fa-bootstrap"></i>
-                    </div>
-                    <span class="skill-card__label">Bootstrap</span>
-                </div>
-                <div class="skill-card">
-                    <div class="skill-card__icon skill-card__icon--blue">
-                        <i class="ri-tailwind-css-fill"></i>
-                    </div>
-                    <i class="fa-brands fa-tailwind-css"></i>
-                </div>
-                <div class="skill-card">
-                    <div class="skill-card__icon skill-card__icon--green">
-                        <i class="fa-brands fa-vuejs"></i>
-                    </div>
-                    <span class="skill-card__label">Vue.js</span>
-                </div>
-                <div class="skill-card">
-                    <div class="skill-card__icon skill-card__icon--blue">
-                        <i class="fa-brands fa-react"></i>
-                    </div>
-                    <span class="skill-card__label">React.js</span>
-                </div>
-                <div class="skill-card">
-                    <div class="skill-card__icon skill-card__icon--orange">
-                        <i class="ri-svelte-line"></i>
-                    </div>
-                    <span class="skill-card__label">Svelte</span>
-                </div>
-                <div class="skill-card">
-                    <div class="skill-card__icon skill-card__icon--orange">
-                        <i class="ri-git-branch-line"></i>
-                    </div>
-                    <span class="skill-card__label">Git</span>
-                </div>
-                <div class="skill-card">
-                    <div class="skill-card__icon skill-card__icon--blue">
-                        <i class="fa-solid fa-code"></i>
-                    </div>
-                    <span class="skill-card__label">VS Code</span>
-                </div>
-                <div class="skill-card">
-                    <div class="skill-card__icon skill-card__icon--purple">
-                        <i class="fa-brands fa-figma"></i>
-                    </div>
-                    <span class="skill-card__label">Figma</span>
-                </div>
+                <div class="card skill"><i class="ri-html5-line"></i><span>HTML 5</span></div>
+                <div class="card skill"><i class="ri-css3-line"></i><span>CSS 3</span></div>
+                <div class="card skill"><i class="ri-javascript-line"></i><span>JavaScript</span></div>
+                <div class="card skill"><i class="ri-database-2-line"></i><span>SQL</span></div>
+                <div class="card skill"><i class="ri-bootstrap-line"></i><span>Bootstrap</span></div>
+                <div class="card skill"><i class="ri-vuejs-line"></i><span>Vue.js</span></div>
+                <div class="card skill"><i class="ri-reactjs-line"></i><span>React.js</span></div>
+                <div class="card skill"><i class="ri-svelte-line"></i><span>Svelte</span></div>
+                <div class="card skill"><i class="ri-git-branch-line"></i><span>Git</span></div>
+                <div class="card skill"><i class="ri-code-line"></i><span>VS Code</span></div>
+                <div class="card skill"><i class="ri-figma-line"></i><span>Figma</span></div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- PROJECTS -->
-    <section class="section" id="projects">
-        <div class="section__container">
-            <h2 class="section__title">
-                <span class="section__number">03 /</span>Projects
-            </h2>
-            <p class="section__subtitle"><img src="https://mouredev.pro/icons/key_dot_dark.svg" alt="">A selection of things I've built.</p>
+        <!-- PROJECTS -->
+        <section class="section" id="projects">
+            <div class="section__header">
+                <p class="section__number">03 /</p>
+                <h2 class="section__title">Projects</h2>
+                <p class="section__subtitle">A selection of things I've built.</p>
+            </div>
 
             <div class="projects-grid">
-                <article class="project-card">
-                    <div class="project-card__cover project-card__cover--yellow">
-                        <i class="fa-regular fa-hand-scissors"></i>
+                <article class="card project">
+                    <h3 class="project__title">Rock, Paper and Scissors</h3>
+                    <p class="project__meta">1 page · 3 day build</p>
+                    <p class="project__desc">The classic rock, paper and scissors game made with Vue.js framework.</p>
+                    <div class="project__tags">
+                        <span>Vue.js</span>
                     </div>
-                    <div class="project-card__body">
-                        <h3 class="project-card__title">Rock, Paper and Scissors</h3>
-                        <div class="project-card__meta">
-                            <span><i class="ri-file-list-line"></i> 1 page</span>
-                            <span><i class="ri-time-line"></i> 3 day build</span>
-                        </div>
-                        <p class="project-card__desc">The classic rock, paper and scissors game made with Vue.js framework.</p>
-                        <div class="project-card__tags">
-                            <span>Vue.js</span>
-                        </div>
-                        <div class="project-card__links">
-                            <a href="https://github.com/MrCrowTech/Vue-rock-paper-scissors/tree/main/Desktop/Personal/VsCode/Vue/Rock%2C%20Paper%2C%20Scissors/Rock%2C%20Paper%2C%20Scissors" target="_blank" class="project-card__link">
-                                <i class="ri-github-line"></i> Code
-                            </a>
-                        </div>
+                    <div class="project__links">
+                        <a href="https://github.com/MrCrowTech/Vue-rock-paper-scissors/tree/main/Desktop/Personal/VsCode/Vue/Rock%2C%20Paper%2C%20Scissors/Rock%2C%20Paper%2C%20Scissors" target="_blank"><i class="ri-github-line"></i> Code</a>
                     </div>
                 </article>
 
-                <article class="project-card">
-                    <div class="project-card__cover project-card__cover--green">
-                        <i class="fa-solid fa-list"></i>
+                <article class="card project">
+                    <h3 class="project__title">TaskFlow</h3>
+                    <p class="project__meta">Kanban app · 1 week build</p>
+                    <p class="project__desc">Kanban-style task manager with drag &amp; drop, local storage persistence, and dark mode support.</p>
+                    <div class="project__tags">
+                        <span>JavaScript</span>
+                        <span>LocalStorage</span>
+                        <span>CSS</span>
                     </div>
-                    <div class="project-card__body">
-                        <h3 class="project-card__title">TaskFlow</h3>
-                        <div class="project-card__meta">
-                            <span><i class="ri-file-list-line"></i> Kanban app</span>
-                            <span><i class="ri-time-line"></i> 1 week build</span>
-                        </div>
-                        <p class="project-card__desc">Kanban-style task manager with drag &amp; drop, local storage persistence, and dark mode support.</p>
-                        <div class="project-card__tags">
-                            <span>JavaScript</span>
-                            <span>LocalStorage</span>
-                            <span>CSS</span>
-                        </div>
-                        <div class="project-card__links">
-                            <a href="https://github.com/MrCrowTech/TaskFlow" target="_blank" class="project-card__link">
-                                <i class="ri-github-line"></i> Code
-                            </a>
-                            <a href="https://taskflow-one-opal.vercel.app/" target="_blank" class="project-card__link">
-                                <i class="ri-external-link-line"></i> Live
-                            </a>
-                        </div>
+                    <div class="project__links">
+                        <a href="https://github.com/MrCrowTech/TaskFlow" target="_blank"><i class="ri-github-line"></i> Code</a>
+                        <a href="https://taskflow-one-opal.vercel.app/" target="_blank"><i class="ri-external-link-line"></i> Live</a>
                     </div>
                 </article>
 
-                <article class="project-card">
-                    <span class="project-card__tag-new">NEW!</span>
-                    <div class="project-card__cover project-card__cover--purple">
-                        <i class="fa-solid fa-gamepad"></i>
+                <article class="card project">
+                    <h3 class="project__title">Impact Point <span class="project__badge">New</span></h3>
+                    <p class="project__meta">Fan site · 3 day build</p>
+                    <p class="project__desc">Retro-like fan website made for the game in Steam Impact Point. Used CSS grid and vanilla JS.</p>
+                    <div class="project__tags">
+                        <span>JavaScript</span>
+                        <span>CSS</span>
+                        <span>UX</span>
                     </div>
-                    <div class="project-card__body">
-                        <h3 class="project-card__title">Impact Point</h3>
-                        <div class="project-card__meta">
-                            <span><i class="ri-file-list-line"></i> Fan site</span>
-                            <span><i class="ri-time-line"></i> 3 day build</span>
-                        </div>
-                        <p class="project-card__desc">Retro-like fan website made for the game in Steam Impact Point. Used CSS grid and vanilla JS.</p>
-                        <div class="project-card__tags">
-                            <span>JavaScript</span>
-                            <span>CSS</span>
-                            <span>UX</span>
-                        </div>
-                        <div class="project-card__links">
-                            <a href="https://github.com/MrCrowTech/Impact-Point" target="_blank" class="project-card__link">
-                                <i class="ri-github-line"></i> Code
-                            </a>
-                            <a href="https://impact-point-one.vercel.app/" target="_blank" class="project-card__link">
-                                <i class="ri-external-link-line"></i> Live
-                            </a>
-                        </div>
+                    <div class="project__links">
+                        <a href="https://github.com/MrCrowTech/Impact-Point" target="_blank"><i class="ri-github-line"></i> Code</a>
+                        <a href="https://impact-point-one.vercel.app/" target="_blank"><i class="ri-external-link-line"></i> Live</a>
                     </div>
                 </article>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- CONTACT -->
-    <section class="section" id="contact">
-        <div class="section__container">
-            <h2 class="section__title">
-                <span class="section__number">04 /</span>Get in touch
-            </h2>
-            <p class="section__subtitle"><img src="https://mouredev.pro/icons/key_dot_dark.svg" alt="">Have a project in mind? Let's talk about it.</p>
+        <!-- CONTACT -->
+        <section class="section" id="contact">
+            <div class="section__header">
+                <p class="section__number">04 /</p>
+                <h2 class="section__title">Get in touch</h2>
+                <p class="section__subtitle">Have a project in mind? Let's talk about it.</p>
+            </div>
 
             <div class="contact-grid">
-                <aside class="contact-info">
-                    <div class="window">
-                        <div class="window__header">
-                            <span class="window__title">
-                                <i class="fa-solid fa-circle-user"></i> contact.info
-                            </span>
-                            <div class="window__buttons">
-                                <span class="window__btn"><i class="fa-solid fa-minus"></i></span>
-                                <span class="window__btn"><i class="fa-solid fa-plus"></i></span>
-                                <span class="window__btn"><i class="fa-solid fa-x"></i></span>
-                            </div>
-                        </div>
-                        <div class="window__body window__body--text">
-                            <div class="contact-info__item">
-                                <i class="fa-solid fa-envelope"></i>
-                                <span>sam@samdev.io</span>
-                            </div>
-                            <div class="contact-info__item">
-                                <i class="fa-solid fa-clock"></i>
-                                <span>Mon – Fri, 9am – 6pm UTC-5</span>
-                            </div>
-                            <div class="contact-info__socials">
-                                <a href="https://github.com/MrCrowTech" target="_blank" aria-label="GitHub">
-                                    <i class="fa-brands fa-github"></i>
-                                </a>
-                                <i class="fa-brands fa-linkedin-in"></i>
-                                <i class="fa-brands fa-x-twitter"></i>
-                            </div>
-                            <span class="window__note window__note--inline">More social links coming very soon.</span>
-                        </div>
+                <aside class="card contact-info">
+                    <div class="contact-info__item">
+                        <i class="ri-mail-line"></i>
+                        <span>sam@samdev.io</span>
                     </div>
+                    <div class="contact-info__item">
+                        <i class="ri-time-line"></i>
+                        <span>Mon – Fri, 9am – 6pm UTC-5</span>
+                    </div>
+                    <div class="contact-info__socials">
+                        <a href="https://github.com/MrCrowTech" target="_blank" aria-label="GitHub"><i class="ri-github-line"></i></a>
+                    </div>
+                    <p class="contact-info__note">More social links coming very soon.</p>
                 </aside>
 
-                <form class="contact-form" id="contactForm" novalidate>
-                    <div class="window">
-                        <div class="window__header">
-                            <span class="window__title">
-                                <i class="fa-solid fa-envelope-circle-check"></i> new_message.form
-                            </span>
-                            <div class="window__buttons">
-                                <span class="window__btn"><i class="fa-solid fa-minus"></i></span>
-                                <span class="window__btn"><i class="fa-solid fa-plus"></i></span>
-                                <span class="window__btn"><i class="fa-solid fa-x"></i></span>
-                            </div>
-                        </div>
-                        <div class="window__body window__body--form">
-                            <input type="hidden" name="access_key" value="e202fedc-cc7d-4a1e-9842-ca6c40e3d409"/>
-                            <div class="form-group">
-                                <label for="name">Name</label>
-                                <input type="text" id="name" name="name" placeholder="Your name" autocomplete="off" />
-                                <span class="form-error" id="nameError"></span>
-                            </div>
-                            <div class="form-group">
-                                <label for="email">Email</label>
-                                <input type="email" id="email" name="email" placeholder="your@email.com" autocomplete="off" />
-                                <span class="form-error" id="emailError"></span>
-                            </div>
-                            <div class="form-group">
-                                <label for="subject">Subject</label>
-                                <input type="text" id="subject" name="subject" placeholder="What's this about?" autocomplete="off" />
-                                <span class="form-error" id="subjectError"></span>
-                            </div>
-                            <div class="form-group">
-                                <label for="message">Message</label>
-                                <textarea id="message" name="message" rows="5" placeholder="Tell me about your project..."></textarea>
-                                <span class="form-error" id="messageError"></span>
-                            </div>
-                            <button type="submit" class="btn btn--green btn--block">
-                                <i class="ri-send-plane-line"></i> Send message
-                            </button>
-                            <p class="form-success" id="formSuccess">
-                                <i class="ri-checkbox-circle-line"></i> Thanks! I'll get back to you soon.
-                            </p>
-                        </div>
+                <form class="card contact-form" id="contactForm" novalidate>
+                    <input type="hidden" name="access_key" value="e202fedc-cc7d-4a1e-9842-ca6c40e3d409"/>
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" placeholder="Your name" autocomplete="off" />
+                        <span class="form-error" id="nameError"></span>
                     </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" placeholder="your@email.com" autocomplete="off" />
+                        <span class="form-error" id="emailError"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" name="subject" placeholder="What's this about?" autocomplete="off" />
+                        <span class="form-error" id="subjectError"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="5" placeholder="Tell me about your project..."></textarea>
+                        <span class="form-error" id="messageError"></span>
+                    </div>
+                    <button type="submit" class="btn btn--primary btn--block">
+                        <i class="ri-send-plane-line"></i> Send message
+                    </button>
+                    <p class="form-success" id="formSuccess">
+                        <i class="ri-checkbox-circle-line"></i> Thanks! I'll get back to you soon.
+                    </p>
                 </form>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- FOOTER -->
+    </main>
+
     <footer class="footer">
-        <div class="footer__window">
-            <div class="window__header">
-                <span class="window__title">
-                    <i class="ri-command-line"></i> ~ /samdev
-                </span>
-                <div class="window__buttons">
-                    <span class="window__btn"><i class="fa-solid fa-minus"></i></span>
-                    <span class="window__btn"><i class="fa-solid fa-plus"></i></span>
-                    <span class="window__btn"><i class="fa-solid fa-x"></i></span>
-                </div>
-            </div>
-            <div class="window__body window__body--footer">
-                <div class="footer__col">
-                    <div class="footer__logo">
-                        <span>{s}</span><sup>dev</sup>
-                    </div>
-                    <p>Front-End Developer crafting clean &amp; accessible interfaces.</p>
-                    <a href="#contact" class="btn btn--green btn--sm">Hire me</a>
-                </div>
-                <div class="footer__col">
-                    <a href="#about" class="footer__link"><span class="footer__link-icon footer__link-icon--yellow">01</span> ABOUT</a>
-                    <a href="#skills" class="footer__link"><span class="footer__link-icon footer__link-icon--green"><i class="ri-folder-open-fill"></i></span> SKILLS</a>
-                    <a href="#projects" class="footer__link"><span class="footer__link-icon footer__link-icon--blue">&lt;/&gt;</span> PROJECTS</a>
-                    <a href="#contact" class="footer__link"><span class="footer__link-icon footer__link-icon--purple"><i class="ri-terminal-box-fill"></i></span> CONTACT</a>
-                </div>
-            </div>
-        </div>
-        <p class="footer__copy">Designed &amp; built by <span>SamDev</span> · 2026</p>
+        <p>Designed &amp; built by <span>SamDev</span> · 2026</p>
     </footer>
 
     <script src="index.js"></script>
