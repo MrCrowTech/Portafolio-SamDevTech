@@ -1,53 +1,31 @@
-// navbar
-const navbar = document.getElementById('navbar');
+// theme toggle
+const lightButton = document.getElementById('light_btn');
+const darkButton = document.getElementById('dark_btn');
+const body = document.querySelector('.bd');
 
-window.addEventListener('scroll', () => {
-    if (window.scrollY > 30) {
-        navbar.classList.add('scrolled')
-    }
-    else {
-        navbar.classList.remove('scrolled')
-    }
-})
+darkButton.addEventListener('click', () => {
+    body.classList.add('dark');
+});
 
-// mobile
-const burger = document.getElementById('burger');
-const burgerIcon = document.getElementById('burgerIcon');
-const mobileMenu = document.getElementById('mobileMenu');
-if (burger && mobileMenu) {
-    burger.addEventListener('click', () => {
-        mobileMenu.classList.toggle('open');
-        if (burgerIcon) {
-            burgerIcon.className = mobileMenu.classList.contains('open')
-                ? 'ri-close-line'
-                : 'ri-menu-line';
-        }
-    });
-    mobileMenu.querySelectorAll('a').forEach(a => {
-        a.addEventListener('click', () => {
-            mobileMenu.classList.remove('open');
-            if (burgerIcon) burgerIcon.className = 'ri-menu-line';
-        });
-    });
-}
+lightButton.addEventListener('click', () => {
+    body.classList.remove('dark');
+});
 
-// contact
+// contact form
 const form = document.getElementById('contactForm');
 const success = document.getElementById('formSuccess');
 
 function showError(id, msg) {
     const el = document.getElementById(id);
     if (el) el.textContent = msg;
-    const inputId = id.replace('Error', '');
-    const input = document.getElementById(inputId);
+    const input = document.getElementById(id.replace('Error', ''));
     if (input) input.classList.add('input--error');
 }
 
 function clearError(id) {
     const el = document.getElementById(id);
     if (el) el.textContent = '';
-    const inputId = id.replace('Error', '');
-    const input = document.getElementById(inputId);
+    const input = document.getElementById(id.replace('Error', ''));
     if (input) input.classList.remove('input--error');
 }
 
